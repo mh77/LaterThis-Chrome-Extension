@@ -1,7 +1,7 @@
 {
 	"name": "LaterThis Chrome Extension",
 	"description": "Toolbar for LaterThis (http://laterthis.com)",
-	"version": "0.1",
+	"version": "0.1.1",
  	
 	"icons": { 
 		"16": "images/16x16.png",
@@ -16,17 +16,14 @@
 	},
  	
 	"permissions": [
-  	"tabs",
-  	"http://*/*", 
-  	"https://*/*"
+  	"tabs", 
+		"<all_urls>"
 	],
- 	
-	"content_scripts": [
-  {
-  	"matches": ["http://*/*"],
-  	"js": ["selection.js"],
-    "run_at": "document_start",
+	
+	"content_scripts": [ {
+	  "matches": ["<all_urls>"],
+	  "js": ["contentscript.js"],
+    "run_at": "document_end",
   	"all_frames": true
-	}
- ]
+	} ]
 }
