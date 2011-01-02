@@ -1,0 +1,32 @@
+{
+	"name": "LaterThis toolbar",
+	"description": "Toolbar for LaterThis (http://laterthis.com)",
+	"version": "0.1",
+ 	
+	"icons": { 
+		"16": "images/16x16.png",
+		"48": "images/48x48.png",
+		"128": "images/128x128.png" 
+	},
+	
+	"browser_action": {
+  	"default_icon": "images/16x16.png",
+   	"default_title": "LaterThis toolbar",
+   	"popup": "popup.html"
+	},
+ 	
+	"permissions": [
+  	"tabs",
+  	"http://*/*", 
+  	"https://*/*"
+	],
+ 	
+	"content_scripts": [
+  {
+  	"matches": ["http://*/*"],
+  	"js": ["selection.js"],
+    "run_at": "document_start",
+  	"all_frames": true
+	}
+ ]
+}
