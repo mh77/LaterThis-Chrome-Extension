@@ -1,4 +1,4 @@
-var baseUrl = "http://laterthis.com/post?stand_alone=true";
+var baseUrl = "http://laterthis.com/post?post_type=standard";
 var url;
 var title;
 var selection 
@@ -16,7 +16,7 @@ function save() {
 
 function goto() {
 	chrome.tabs.getSelected(null , function(tab) {
-		chrome.tabs.update(tab.id, {url: 'http://laterthis.com/my_links/'});
+		chrome.tabs.update(tab.id, {url: 'http://laterthis.com?my_links=true'});
 	});
 }
 
